@@ -1,41 +1,33 @@
-// Utility scripts for data manipulation, string operations, and array operations
+// Fantastic JavaScript Code
 
-// Data Manipulation Functions
-function convertToJson(data) {
-    return JSON.stringify(data);
-}
-
-function parseJson(json) {
-    return JSON.parse(json);
-}
-
-// String Operations
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-function truncateString(str, num) {
-    if (str.length > num) {
-        return str.slice(0, num) + '...';
-    }
-    return str;
-}
-
-// Array Operations
-function removeDuplicates(array) {
-    return [...new Set(array)];
-}
-
-function flattenArray(array) {
-    return array.reduce((acc, val) => acc.concat(val), []);
-}
-
-// Exporting functions
-module.exports = {
-    convertToJson,
-    parseJson,
-    capitalizeFirstLetter,
-    truncateString,
-    removeDuplicates,
-    flattenArray
+// Interactive feature: Toggle dark mode
+const toggleDarkMode = () => {
+    document.body.classList.toggle('dark-mode');
 };
+
+// Animation: Smooth scroll
+const smoothScroll = (target) => {
+    const element = document.getElementById(target);
+    element.scrollIntoView({ behavior: 'smooth' });
+};
+
+// Fun utility: Random color generator
+const getRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+};
+
+// Event listeners for interactive features
+document.getElementById('darkModeButton').addEventListener('click', toggleDarkMode);
+
+// Example usage of smooth scroll
+document.getElementById('scrollButton').addEventListener('click', () => smoothScroll('targetElement'));
+
+// Example usage of random color
+document.getElementById('colorButton').addEventListener('click', () => {
+    document.body.style.backgroundColor = getRandomColor();
+});
